@@ -2,26 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Premium Dark Theme Styles */
+body {
+  background-color: #000;
+  background-image:
+    radial-gradient(circle at 20% 30%, #2f0808 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, #1a0505 0%, transparent 40%);
+  color: #e5e7eb;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .glass-panel {
+    @apply bg-brand-card border border-red-500/10 backdrop-blur-md shadow-lg transition-all duration-300;
+  }
+
+  .glass-panel:hover {
+    @apply border-red-500/30 shadow-[0_0_25px_rgba(127, 29, 29, 0.2)];
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #450a0a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ef4444;
+}
+
+/* Map Styles */
+.map-region {
+  fill: #2a0a0a;
+  stroke: #ef4444;
+  stroke-width: 0.5;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.map-region:hover {
+  fill: #ef4444;
+  filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
+  transform: scale(1.01);
+}
+
+.map-region.active {
+  fill: #b91c1c;
+  stroke: #fff;
+  stroke-width: 1.5;
 }
