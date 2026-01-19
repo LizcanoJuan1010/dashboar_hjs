@@ -41,8 +41,7 @@ ContactosPorPuesto AS (
     SELECT 
         cod_departamento, cod_municipio, cod_zona, cod_puesto,
         COUNT(*) as total_contactos
-    FROM bd_hjs_contactos
-    GROUP BY 1,2,3,4
+    FROM contactos_hjs GROUP BY 1,2,3,4
 )
 SELECT 
     d.nom_municipio,

@@ -23,7 +23,7 @@ CREATE TABLE "dim_divipole" (
     "nombre_puesto" VARCHAR(255),
     "direccion_puesto" VARCHAR(255),
     "tipo_zona" VARCHAR(50), -- Rural/Urbana
-    "mesa" VARCHAR(10),      
+    "mesa" INTEGER,      
     
     -- Coordenadas Geográficas
     "latitud" DECIMAL(10, 8),
@@ -97,29 +97,19 @@ CREATE TABLE "censo_electoral" (
 CREATE INDEX idx_censo_geo ON "censo_electoral" ("cod_departamento", "cod_municipio", "cod_zona", "cod_puesto");
 
 
-CREATE TABLE "bd_hjs_contactos" (
-    "contacto_id" SERIAL PRIMARY KEY,
-    "documento" VARCHAR(20),
+CREATE TABLE "contactos_hjs" (
+    "documento" VARCHAR(20) PRIMARY KEY,
     "nombre_completo" VARCHAR(255),
-    "celular" VARCHAR(50),
-    "direccion_residencia" TEXT,
+    "contacto" VARCHAR(100),
+    "direccion" VARCHAR(255),
     "barrio" VARCHAR(100),
-    
-    -- Ubicación Directa
+    "municipio_texto" VARCHAR(100),
     "cod_departamento" VARCHAR(5),
     "cod_municipio" VARCHAR(5),
-    "cod_zona" VARCHAR(5),
-    "cod_puesto" VARCHAR(20),
-    
-    -- Respaldo en texto
-    "municipio_nombre" VARCHAR(100),
-    "puesto_votacion_nombre" VARCHAR(255),
-    "mesa_votacion" VARCHAR(10),
-    
-    "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-CREATE INDEX idx_hjs_geo ON "bd_hjs_contactos" ("cod_municipio", "cod_zona");
+-- Index for performance
+CREATE INDEX idx_contactos_hjs_geo ON "contactos_hjs" ("cod_departamento", "cod_municipio");
 
 
 -- --------------------------------------------------------------------------------------
@@ -147,6 +137,7 @@ CREATE TABLE "empleados_empresas" (
     "direccion" TEXT,
     
     -- Ubicación Electoral
+    "cod_departamento" VARCHAR(5),
     "cod_municipio" VARCHAR(5),
     "zona_codigo" VARCHAR(10),
     "puesto_codigo" VARCHAR(10),
@@ -222,6 +213,6 @@ CREATE TABLE "rel_contacto_grupo" (
     "grupo_id" INTEGER,
     "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     
-    FOREIGN KEY ("contacto_id") REFERENCES "bd_hjs_contactos"("contacto_id") ON DELETE CASCADE,
+    FOREIGN KEY ("contacto_id") REFERENCES "contactos_hjs"("documento") ON DELETE CASCADE,
     FOREIGN KEY ("grupo_id") REFERENCES "dim_grupos"("grupo_id") ON DELETE CASCADE
 );

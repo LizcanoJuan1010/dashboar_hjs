@@ -86,8 +86,8 @@ def load_empleados():
                 empleado_id, documento, tipo_documento, empresa_id,
                 primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, nombre_completo,
                 sexo, fecha_nacimiento, nivel_educativo, email, celular, direccion,
-                cod_municipio, zona_codigo, puesto_codigo
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                cod_departamento, cod_municipio, zona_codigo, puesto_codigo
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             ON CONFLICT (empleado_id) DO UPDATE SET
                 documento = EXCLUDED.documento,
                 nombre_completo = EXCLUDED.nombre_completo,
@@ -127,6 +127,7 @@ def load_empleados():
                 row['email'],
                 str(cel)[:50] if cel else None,
                 row['address'],
+                row['department_code'],
                 row['municipality_code'], 
                 row['zone_code'], 
                 row['place_code']

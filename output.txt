@@ -1,0 +1,14 @@
+ documento  |      nombre_completo       |  contacto  |                      direccion                      |     barrio     | municipio_texto | cod_departamento | cod_municipio |         created_at         
+------------+----------------------------+------------+-----------------------------------------------------+----------------+-----------------+------------------+---------------+----------------------------
+ 63367758   | JAZMIN  BELTRAN HERNANDEZ  | 3012803363 | CALLE 27 #2-65                                      | GIRARDOT       | BUCARAMANGA     | 27               | 001           | 2026-01-19 14:16:15.362661
+ 71450702   | MANUEL ANTONIO             | 3170991442 | CORREGIMIENTO EL TIGRE                              | NaN            | NaN             |                  |               | 2026-01-19 14:16:15.362661
+ 63369443   | GLADYS  AYALA HERRERA      | 3209275079 | MINUTO DE DIOS                                      | KENNEDY        | BUCARAMANGA     | 27               | 001           | 2026-01-19 14:16:15.362661
+ 63482038   | MARIA ISABEL               | 3175856225 | CARRERA 17 8 -08                                    | COMUNEROS      | BUCARAMANGA     | 27               | 001           | 2026-01-19 14:16:15.362661
+ 1234338338 | DANILO  GAONA              | 3016308776 | CRA 5 AE #28A27                                     | NaN            | NaN             |                  |               | 2026-01-19 14:16:15.362661
+ 1100890861 | JONATHAN  MAURICIO MENDOZA | 3024439449 | CARRERA 11 OCCIDENTE #36-69                         | LA JOYA        | BUCARAMANGA     | 27               | 001           | 2026-01-19 14:16:15.362661
+ 1098774788 | SANDRA  UPEGUI             | 3170501371 | BRISAS DEL SOL CASA 300                             | NaN            | NaN             |                  |               | 2026-01-19 14:16:15.362661
+ 1098754346 | ALVARO  LEON MANRIQUE      | 3219497532 | CARRA 11#26.12                                      | SAN RAFAEL     | BUCARAMANGA     | 27               | 001           | 2026-01-19 14:16:15.362661
+ 1098737249 | WILMER  JAVIER CASTRO      | 3166491645 | CALLE 95 13 B 40 APT 201 CIUDAD VENECIA BUCARAMANGA | CIUDAD VENECIA | BUCARAMANGA     | 27               | 001           | 2026-01-19 14:16:15.362661
+ 1098695111 | JERSSON  REYNALDO HERRERA  | 3209620271 | CALLE 32 #39-24 APTO 201                            | ALVAREZ        | BUCARAMANGA     | 27               | 001           | 2026-01-19 14:16:15.362661
+(10 rows)
+
