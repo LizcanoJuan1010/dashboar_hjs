@@ -1,0 +1,28 @@
+# Data Files (Too large for git)
+data/
+*.csv
+*.xlsx
+*.pdf
+database/*.sql
+!database/ddl.sql
+!database/analytics_queries.sql
+!database/optimization.sql
+
+# Environment
+.env
+__pycache__/
+*.pyc
+
+# Docker
+postgres_data/
+
+# Frontend
+node_modules/
+.next/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# Logs
+*.log
